@@ -17,7 +17,7 @@ public class InfoQueueHospital {
 
     @PutMapping("/{hospital}")
     public ResponseEntity<Void> updateQueueHospital(@PathVariable int hospital, @RequestBody String body) throws JsonProcessingException {
-        sendInfoQueueHospitalFacade.messagingSendInfoQueueHospital(body);
+        sendInfoQueueHospitalFacade.messagingSendInfoQueueHospital(body, hospital);
         return new ResponseEntity<Void>(HttpStatus.ACCEPTED);
     }
 }
